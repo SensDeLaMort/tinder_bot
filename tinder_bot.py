@@ -4,7 +4,7 @@ from random import randint
 
 class TinderBot:
     def __init__(self):
-        self.driver = webdriver.Chrome()
+        self.driver = webdriver.Safari()
 
     def login(self):
         self.driver.get('https://tinder.com')
