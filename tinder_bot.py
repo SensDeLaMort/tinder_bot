@@ -1,18 +1,11 @@
-import os
-
-try:
-    from selenium import webdriver
-except ImportError:
-    os.system()
-
-
+from selenium import webdriver
 from time import sleep
 from random import randint
 
 
 class TinderBot:
     def __init__(self):
-        self.driver = webdriver.Safari()
+        self.driver = webdriver.Chrome()
 
     def login(self):
         self.driver.get('https://tinder.com')
@@ -57,8 +50,7 @@ class TinderBot:
                     try:
                         self.close_match()
                     except Exception:
-                        self.auto_swipe()
-
+                        print('Error occurred while swiping')
 
     def close_popup(self):
         popup_3 = self.driver.find_element_by_xpath('//*[@id="modal-manager"]/div/div/div[2]/button[2]')
