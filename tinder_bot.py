@@ -2,7 +2,6 @@ from selenium import webdriver
 from time import sleep
 from random import randint
 
-
 class TinderBot:
     def __init__(self):
         self.driver = webdriver.Chrome()
@@ -27,11 +26,11 @@ class TinderBot:
         popup_2.click()
 
     def like(self):
-        like_btn = self.driver.find_element_by_xpath('//*[@id="content"]/div/div[1]/div/div/main/div/div[1]/div/div[2]/div[4]/button')
+        like_btn = self.driver.find_element_by_css_selector('[aria-label="Like"]')
         like_btn.click()
 
     def dislike(self):
-        dislike_btn = self.driver.find_element_by_xpath('//*[@id="content"]/div/div[1]/div/div/main/div/div[1]/div/div[2]/div[2]/button')
+        dislike_btn = self.driver.find_element_by_css_selector('[aria-label="Nope"]')
         dislike_btn.click()
 
     def auto_swipe(self):
@@ -63,4 +62,3 @@ class TinderBot:
 
 bot = TinderBot()
 bot.login()
-bot.auto_swipe()
